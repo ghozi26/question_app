@@ -48,10 +48,10 @@ class _MyAppState extends State<MyApp> {
     }
   ];
 
-  void _answerQuestion(int score) {
+  void _answerQuestion(int score, String choice) {
     setState(() {
       _questionIndex++;
-      _objScore.add({'idx': _questionIndex, 'score': score});
+      _objScore.add({'idx': _questionIndex, 'score': score, 'choice': choice});
     });
     print(_objScore);
     if (_questionIndex < questions.length) {
@@ -97,6 +97,7 @@ class _MyAppState extends State<MyApp> {
                 resultText: "Thank you for filling out the question",
                 btnBackText: "Back to home",
                 resultScore: _totalScore,
+                objResultAnswer: _objScore,
               ),
       ),
     );

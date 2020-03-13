@@ -22,7 +22,7 @@ class Quiz extends StatelessWidget {
       children: <Widget>[
         Question(questions[questionIndex]['questionText']),
         ...(questions[questionIndex]['answer'] as List<Map<String, Object>>).map((answer) {
-          return Answer(() => answerQuestion(answer['score']), answer['text']);
+          return Answer(() => answerQuestion(answer['score'], answer['text']), answer['text']);
         }).toList(),
         questionIndex != 0
             ? Container(
